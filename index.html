@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contractor Company Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Slider Styles - updated for side arrows */
+        .hero-box { position: absolute; top: 50%; left: 80px; transform: translateY(-50%); z-index: 10; }
+
+        .project-slider, .team-slider { 
+            position: relative; 
+            overflow: hidden; 
+            margin: 30px 0;
+            padding: 0 60px;
+        }
+
+        .project-gallery, .team-gallery { 
+            display: flex; 
+            flex-wrap: nowrap;
+            gap: 25px;
+            transition: transform 0.5s ease-in-out; 
+        }
+
+        .project-item, .team-member { 
+            flex: 0 0 320px;
+            min-width: 320px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .project-item img, .team-member img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .project-item h4, .team-member h4 {
+            padding: 15px 15px 5px;
+            margin: 0;
+            color: #0b2c4d;
+        }
+
+        .project-item p, .team-member p {
+            padding: 0 15px 15px;
+            margin: 0;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* Side Arrows - same as projects.html */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(11, 44, 77, 0.7);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s;
+        }
+
+        .slider-arrow:hover {
+            background: orange;
+            transform: translateY(-50%) scale(1.08);
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        .faq-answer { display: none; padding-top: 10px; }
+        .faq-toggle { background: none; border: none; width: 100%; text-align: left; font-size: 18px; cursor: pointer; }
+        .show-more { color: orange; text-decoration: none; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
+        .stat-box { background: #0b2c4d; color: white; padding: 20px; border-radius: 10px; }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .project-slider, .team-slider { padding: 0 40px; }
+            .project-item, .team-member { flex: 0 0 280px; min-width: 280px; }
+            .slider-arrow { width: 44px; height: 44px; font-size: 1.6rem; }
+            .hero-box { left: 20px; max-width: 85%; }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+
+    <!-- HERO with Slider -->
+    <div class="hero" id="home">
+        <div class="hero-slider">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" alt="Construction Site 1" class="active">
+            <img src="https://images.unsplash.com/photo-1597047084897-51e81819a499" alt="Construction Site 2">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758" alt="Construction Site 3">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd" alt="Construction Site 4">
+        </div>
+        <div class="hero-box">
+            <h1>Building Strong Foundations For The Future</h1>
+            <p>Professional Civil & Electrical Contractors delivering modern, safe and reliable infrastructure solutions.</p>
+            <a href="projects.html" class="hero-btn">View Our Projects</a>
+        </div>
+        <button class="slider-arrow prev" onclick="prevSlide()">❮</button>
+        <button class="slider-arrow next" onclick="nextSlide()">❯</button>
+    </div>
+
+    <!-- ABOUT -->
+    <section style="margin-top: 600px;" id="about">
+        <div class="section-title">
+            <h2>About Our Company</h2>
+        </div>
+        <div class="about">
+            <img src="https://media.istockphoto.com/id/2225197256/photo/handsome-man-portrait-construction-worker-is-on-the-roof-of-a-house.webp?a=1&b=1&s=612x612&w=0&k=20&c=mCNx2G1qgf55WrUfimnc_8ViHS6XhMjaZSh9XgbDEus=" alt="About Company">
+            <div class="about-text">
+                <h3>We Are Industry Leaders</h3>
+                <p>We are a professionally managed civil and electrical contracting company committed to delivering high-quality construction solutions. With years of hands-on experience, we specialize in residential, commercial, and industrial projects.</p>
+                <p>Our team of qualified engineers, skilled technicians, and project managers ensures every project is completed with precision, safety, and on-time delivery.</p>
+                <p>Client satisfaction, transparency, and quality workmanship are the core values that drive our success and long-term relationships.</p>
+                <a href="about.html" class="hero-btn">Learn More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-building"></i>
+                <h3>Civil Construction</h3>
+                <p>Residential, commercial and industrial construction projects with durable, earthquake-resistant designs. Benefits: Long-lasting structures, cost-effective from PKR 500,000+.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Electrical Works</h3>
+                <p>Complete wiring, installation, maintenance and power solutions, NEC-compliant with 30% energy savings. Benefits: Safe, efficient systems from PKR 200,000+.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-tools"></i>
+                <h3>Renovation</h3>
+                <p>Building renovation, repair and remodeling services, increasing property value by 20%. Benefits: Modern upgrades, custom designs from PKR 300,000+.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Project Management</h3>
+                <p>Oversee timelines, budgets, and quality with weekly reports for on-time delivery. Benefits: Risk mitigation, transparent process from PKR 100,000+.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-wrench"></i>
+                <h3>Maintenance</h3>
+                <p>Annual inspections and repairs to extend lifespan and prevent issues. Benefits: Preventive care, reduced downtime from PKR 50,000/year.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Consulting</h3>
+                <p>Feasibility studies and expert advice for risk-free project planning. Benefits: Informed decisions, tailored solutions from PKR 150,000+.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="services.html" class="hero-btn">Explore All Services</a>
+        </div>
+    </section>
+
+    <!-- PROJECTS - updated with side arrows -->
+    <section id="projects">
+        <div class="section-title">
+            <h2>Our Projects</h2>
+        </div>
+        <div class="project-slider">
+            <button class="slider-arrow prev" onclick="prevProjectSlide()">❮</button>
+            
+            <div class="project-gallery">
+                <div class="project-item">
+                    <img src="https://images.unsplash.com/photo-1597047084897-51e81819a499" alt="Project 1">
+                    <h4>Lahore Residential Villa</h4>
+                    <p>3-story build, 6 months. Smart electrical, eco-materials. Cost: PKR 2M. ★★★★★ "Flawless work!" - Ahmed Khan</p>
+                </div>
+                <div class="project-item">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758" alt="Project 2">
+                    <h4>Karachi Office Complex</h4>
+                    <p>5000 sq ft renovation, 4 months. Modern interiors. Cost: PKR 1.5M. ★★★★☆ "Professional team." - Fatima Ali</p>
+                </div>
+                <div class="project-item">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" alt="Project 3">
+                    <h4>Islamabad Warehouse</h4>
+                    <p>Large industrial build, 8 months. Advanced wiring. Cost: PKR 5M. ★★★★★ "Reliable partners." - Mr. Khan</p>
+                </div>
+                <div class="project-item">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd" alt="Project 4">
+                    <h4>Faisalabad Apartment</h4>
+                    <p>10-unit complex, 12 months. Green building. Cost: PKR 10M. ★★★★☆ "Sustainable design." - Client</p>
+                </div>
+            </div>
+
+            <button class="slider-arrow next" onclick="nextProjectSlide()">❯</button>
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="projects.html" class="hero-btn">View All Projects</a>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="choose" id="choose-color">
+        <div class="section-title">
+            <h2>Why Choose Us</h2>
+        </div>
+        <div class="choose-grid">
+            <div class="choose-box">✔ Experienced Engineers</div>
+            <div class="choose-box">✔ Quality Materials</div>
+            <div class="choose-box">✔ On-Time Delivery</div>
+            <div class="choose-box">✔ Trusted by Clients</div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team">
+        <div class="section-title"><h2>Meet Our Team</h2></div>
+            <div class="team-gallery">
+                <div class="team-member">
+                    <img src="images/abdullah.jpg" alt="Engr. Abdullah">
+                    <h4>Engr. Abdullah</h4>
+                    <p>Software Engineer, 10+ years. Led 50+ projects.</p>
+                </div>
+                <br>
+                <br>
+                <div class="team-member">
+                    <img src="images/a.jabbar.jpeg" alt="Engr. A.Jabbar">
+                    <h4>Engr. A.Jabbar</h4>
+                    <p>Civil Engineer, MSc, expert in structural integrity.</p>
+                </div>
+                <br>
+                <br>
+                <div class="team-member">
+                    <img src="images/a.rehman.jpg" alt="Engr. A.Rehman">
+                    <h4>Engr. A.Rehman</h4>
+                    <p>Team Member, 8 years in project execution.</p>
+                </div>
+            </section>
+            
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="about.html" class="hero-btn">Meet the Full Team</a>
+        </div>
+
+    <!-- CLIENT REVIEWS -->
+    <section id="reviews">
+        <div class="section-title"><h2>Client Reviews</h2></div>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <p>"Outstanding quality and professionalism. Highly recommend!"</p>
+                <h4>- Ahmed Khan ★★★★★</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Delivered on time and within budget. Excellent service."</p>
+                <h4>- Fatima Ali ★★★★☆</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Transformed our space beautifully. 5-star team!"</p>
+                <h4>- Mr. Khan ★★★★★</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Reliable and efficient. Will hire again."</p>
+                <h4>- Client XYZ ★★★★☆</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Eco-friendly approach impressed us. Great results."</p>
+                <h4>- Owner ABC ★★★★★</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Professional from start to finish. Top-notch."</p>
+                <h4>- CEO DEF ★★★★☆</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="section-title"><h2>Frequently Asked Questions</h2></div>
+        <div class="faq-item">
+            <button class="faq-toggle">Do you provide electrical work along with civil construction? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">Yes, our team handles both civil and electrical works professionally. <a href="#" class="show-more">Show More</a></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-toggle">What warranties do you offer? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">We offer a 2-year warranty on all work. <a href="#" class="show-more">Show More</a></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-toggle">How do you ensure safety? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">We follow OHSAS standards with zero accidents in 5 years. <a href="#" class="show-more">Show More</a></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-toggle">Do you handle international projects? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">Yes, we have experience in UAE and Saudi Arabia. <a href="#" class="show-more">Show More</a></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-toggle">What is your project timeline? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">Timelines vary; we provide detailed schedules post-consultation. <a href="#" class="show-more">Show More</a></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-toggle">How much do services cost? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">Costs start from PKR 50,000; contact for quotes. <a href="#" class="show-more">Show More</a></div>
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="about.html" class="hero-btn">Read More FAQs</a>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section id="stats">
+        <div class="section-title"><h2>Our Achievements</h2></div>
+        <div class="stats-grid">
+            <div class="stat-box">500+ Projects Completed</div>
+            <div class="stat-box">200+ Happy Clients</div>
+            <div class="stat-box">10+ Years Experience</div>
+            <div class="stat-box">ISO 9001 Certified</div>
+        </div>
+    </section>
+
+    <!-- MISSION & VISION -->
+    <!-- MISSION & VISION - Half-Half Layout -->
+<section id="mission" class="mission-section">
+    <div class="section-title">
+        <h2>Our Mission & Vision</h2>
+        <p class="section-subtitle">Shaping a Sustainable & Innovative Tomorrow</p>
+    </div>
+
+    <div class="mission-content">
+        <!-- Left: Mission -->
+        <div class="mission-column mission-left">
+            <div class="mission-block">
+                <h3>Our Mission</h3>
+                <p>To deliver world-class civil and electrical construction solutions that surpass client expectations in quality, safety, timeliness, cost-efficiency, and long-term value. We integrate advanced engineering techniques, high-grade sustainable materials, and eco-conscious methods to build resilient, energy-efficient structures that uplift communities while safeguarding the environment. Every project is driven by an uncompromising dedication to excellence, complete transparency, ethical practices, and client-centric service — forging lasting partnerships rooted in trust, reliability, and outstanding craftsmanship.</p>
+            </div>
+        </div>
+
+        <!-- Right: Vision + Image -->
+        <div class="mission-column mission-right">
+            <div class="mission-block">
+                <h3>Our Vision</h3>
+                <p>To emerge as Pakistan’s foremost and most respected construction powerhouse, celebrated both nationally and globally for pioneering sustainable infrastructure, smart building technologies, and transformative urban development. We strive to redefine industry standards through green innovation, resilient design, and cutting-edge solutions — creating healthier, smarter, and more livable communities while significantly reducing environmental footprint. By 2035, we envision leading the way toward a prosperous, inclusive, and environmentally responsible Pakistan that stands tall on the world stage.</p>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+        <div class="section-title"><h2>What Our Clients Say</h2></div>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <p>"Their values shine through in every project. Highly recommended!"</p>
+                <h4>- Business Owner ★★★★★</h4>
+            </div>
+            <div class="testimonial">
+                <p>"From consultation to handover, flawless execution."</p>
+                <h4>- Residential Client ★★★★☆</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUBSCRIBE FORM & CONTACT -->
+    <section class="half-section">
+        <div class="half-box" id="subscribe">
+            <div class="section-title">
+                <h2>Subscribe for Updates</h2>
+            </div>
+            <form class="subscribe-form">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <div class="half-box" id="contact-form">
+            <div class="section-title">
+                <h2>Request a Quote</h2>
+            </div>
+            <form>
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <input type="text" placeholder="Phone Number">
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <script>
+        // Hero Slider (same as before)
+        let heroSlideIndex = 0;
+        const heroSlides = document.querySelectorAll('.hero-slider img');
+        function showHeroSlide(index) {
+            heroSlides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+        }
+        function nextSlide() {
+            heroSlideIndex = (heroSlideIndex + 1) % heroSlides.length;
+            showHeroSlide(heroSlideIndex);
+        }
+        function prevSlide() {
+            heroSlideIndex = (heroSlideIndex - 1 + heroSlides.length) % heroSlides.length;
+            showHeroSlide(heroSlideIndex);
+        }
+        setInterval(nextSlide, 3000);
+
+        // Project Slider - side arrows
+        let projectSlideIndex = 0;
+        const projectGallery = document.querySelector('.project-gallery');
+
+        function updateProjectSlider() {
+            if (!projectGallery) return;
+            const items = Array.from(projectGallery.querySelectorAll('.project-item'));
+            if (items.length === 0) return;
+
+            const itemWidth = items[0].offsetWidth + 25;
+            const visibleCount = window.innerWidth > 1100 ? 3 : window.innerWidth > 750 ? 2 : 1;
+            const maxIndex = Math.max(0, items.length - visibleCount);
+
+            if (projectSlideIndex > maxIndex) projectSlideIndex = maxIndex;
+
+            projectGallery.style.transform = `translateX(-${projectSlideIndex * itemWidth}px)`;
+        }
+
+        function nextProjectSlide() {
+            const items = Array.from(projectGallery.querySelectorAll('.project-item'));
+            const visibleCount = window.innerWidth > 1100 ? 3 : window.innerWidth > 750 ? 2 : 1;
+            const maxIndex = Math.max(0, items.length - visibleCount);
+
+            if (projectSlideIndex < maxIndex) {
+                projectSlideIndex++;
+                updateProjectSlider();
+            }
+        }
+
+        function prevProjectSlide() {
+            if (projectSlideIndex > 0) {
+                projectSlideIndex--;
+                updateProjectSlider();
+            }
+        }
+
+        // Team Slider - side arrows
+        let teamSlideIndex = 0;
+        const teamGallery = document.querySelector('.team-gallery');
+
+        function updateTeamSlider() {
+            if (!teamGallery) return;
+            const items = Array.from(teamGallery.querySelectorAll('.team-member'));
+            if (items.length === 0) return;
+
+            const itemWidth = items[0].offsetWidth + 25;
+            const visibleCount = window.innerWidth > 1100 ? 3 : window.innerWidth > 750 ? 2 : 1;
+            const maxIndex = Math.max(0, items.length - visibleCount);
+
+            if (teamSlideIndex > maxIndex) teamSlideIndex = maxIndex;
+
+            teamGallery.style.transform = `translateX(-${teamSlideIndex * itemWidth}px)`;
+        }
+
+        function nextTeamSlide() {
+            const items = Array.from(teamGallery.querySelectorAll('.team-member'));
+            const visibleCount = window.innerWidth > 1100 ? 3 : window.innerWidth > 750 ? 2 : 1;
+            const maxIndex = Math.max(0, items.length - visibleCount);
+
+            if (teamSlideIndex < maxIndex) {
+                teamSlideIndex++;
+                updateTeamSlider();
+            }
+        }
+
+        function prevTeamSlide() {
+            if (teamSlideIndex > 0) {
+                teamSlideIndex--;
+                updateTeamSlider();
+            }
+        }
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        // Events for sliders
+        window.addEventListener('resize', () => {
+            updateProjectSlider();
+            updateTeamSlider();
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateProjectSlider();
+            updateTeamSlider();
+        });
+        
+
+        // Fetch Navbar and Footer
+        fetch("navbar.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+                const currentPath = window.location.pathname;
+                let currentFile = currentPath.split("/").pop() || "index.html";
+                currentFile = currentFile.toLowerCase();
+                const links = document.querySelectorAll("#main-nav a");
+                links.forEach(link => {
+                    link.classList.remove("active");
+                    let href = link.getAttribute("href").toLowerCase();
+                    if (href === currentFile || href.endsWith("/" + currentFile)) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+</body>
+</html>

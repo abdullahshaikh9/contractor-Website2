@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects - Contractor Company</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+    <div class="hero-projects">
+        <div class="hero-box">
+            <h1>Our Successful Projects</h1>
+            <p>Explore our portfolio of residential, commercial & industrial builds with real client feedback and ratings.</p>
+        </div>
+    </div>
+
+    <!-- PROJECT GALLERY -->
+    <section id="gallery">
+        <div class="section-title"><h2>Project Gallery</h2></div>
+        
+        <div class="filter-wrapper">
+            <p class="filter-label">Filter by Category:</p>
+            <div class="filter-buttons">
+                <button onclick="filterProjects('all')" class="filter-btn active">All</button>
+                <button onclick="filterProjects('residential')" class="filter-btn">Residential</button>
+                <button onclick="filterProjects('commercial')" class="filter-btn">Commercial</button>
+                <button onclick="filterProjects('industrial')" class="filter-btn">Industrial</button>
+            </div>
+        </div>
+
+        <div class="project-slider">
+            <button class="slider-arrow prev" onclick="prevSlide()">❮</button>
+            
+            <div class="project-gallery" id="projectGallery">
+                <div class="project-item residential">
+                    <img src="https://images.unsplash.com/photo-1597047084897-51e81819a499" alt="Villa">
+                    <h4>Lahore Residential Villa</h4>
+                    <p>3-story luxury build, 6 months. Smart electrical, eco-friendly materials. Cost: PKR 2M. ★★★★★ "Flawless execution, beautiful finish!" - Ahmed Khan</p>
+                </div>
+                <div class="project-item commercial">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758" alt="Office">
+                    <h4>Karachi Office Complex</h4>
+                    <p>5000 sq ft modern renovation, 4 months. Open-plan interiors, LED lighting. Cost: PKR 1.5M. ★★★★☆ "Creative & professional team." - Fatima Ali</p>
+                </div>
+                <div class="project-item industrial">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" alt="Warehouse">
+                    <h4>Islamabad Warehouse</h4>
+                    <p>40,000 sq ft industrial facility, 8 months. Heavy-duty wiring & fire safety. Cost: PKR 5M. ★★★★★ "Reliable & on-budget." - Mr. Khan</p>
+                </div>
+                <div class="project-item residential">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd" alt="Apartment">
+                    <h4>Faisalabad Apartment Complex</h4>
+                    <p>10-unit green building, 12 months. Solar-ready design. Cost: PKR 10M. ★★★★☆ "Sustainable & high-quality." - Client</p>
+                </div>
+                <div class="project-item commercial">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab" alt="Mall">
+                    <h4>Multan Shopping Mall Renovation</h4>
+                    <p>Full lighting & interior upgrade, 5 months. Cost: PKR 3M. ★★★★★ "Sales boosted dramatically." - Owner</p>
+                </div>
+                <div class="project-item industrial">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64" alt="Factory">
+                    <h4>Gujranwala Factory Expansion</h4>
+                    <p>Production line expansion, 7 months. Cost: PKR 7M. ★★★★☆ "Efficiency increased significantly." - CEO</p>
+                </div>
+            </div>
+
+            <button class="slider-arrow next" onclick="nextSlide()">❯</button>
+        </div>
+    </section>
+
+    <!-- PROJECT STATS -->
+    <section id="stats" class="stats-section">
+        <div class="section-title" id="section-title">
+            <h2>Our Track Record</h2>
+            <p class="section-subtitle">Proven Results, Trusted Performance</p>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-box">
+                <i class="fas fa-hard-hat"></i>
+                <h3>550+</h3>
+                <p>Skilled Professionals</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-check-circle"></i>
+                <h3>220+</h3>
+                <p>Projects Delivered</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-rupee-sign"></i>
+                <h3>PKR 650M+</h3>
+                <p>Annual Revenue</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-shield-alt"></i>
+                <h3>5 Years</h3>
+                <p>Zero Lost-Time Accidents</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why-us" class="why-us-section">
+        <div class="section-title">
+            <h2>Why Clients Choose Us</h2>
+            <p class="section-subtitle">What Sets Us Apart From Others</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card">
+                <i class="fas fa-clock"></i>
+                <h3>On-Time Delivery</h3>
+                <p>98% projects completed on or before schedule</p>
+            </div>
+            <div class="why-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Top Safety Record</h3>
+                <p>5 years zero accidents – ISO 45001 certified</p>
+            </div>
+            <div class="why-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Sustainable Builds</h3>
+                <p>Green materials & energy-efficient designs</p>
+            </div>
+            <div class="why-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Client Satisfaction</h3>
+                <p>4.8/5 average rating from 150+ clients</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENT TESTIMONIALS -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="section-title">
+            <h2>What Our Clients Say</h2>
+            <p class="section-subtitle">Real Feedback From Real Projects</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <p>"Outstanding quality, perfect timing, and truly professional team. Best contractor experience ever!"</p>
+                <h4>Ahmed Khan – Lahore</h4>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="testimonial">
+                <p>"Modern office transformation with creative design and flawless electrical work. Highly recommended."</p>
+                <h4>Fatima Ali – Karachi</h4>
+                <div class="stars">★★★★☆</div>
+            </div>
+            <div class="testimonial">
+                <p>"Reliable, transparent, and safe. Our warehouse was handed over perfectly – on time and on budget."</p>
+                <h4>Mr. Khan – Islamabad</h4>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="testimonial">
+                <p>"Eco-friendly villa with smart features – energy bills reduced by 40%!"</p>
+                <h4>Faisalabad Client</h4>
+                <div class="stars">★★★★★</div>
+            </div>
+        </div>
+    </section>
+
+  
+   
+
+    <div id="footer"></div>
+
+    <script>
+        // Filter with active button
+        function filterProjects(type) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            document.querySelectorAll('.project-item').forEach(item => {
+                if (type === 'all' || item.classList.contains(type)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            currentIndex = 0;
+            setTimeout(updateSlider, 100);
+        }
+
+        // Slider logic
+        let currentIndex = 0;
+
+        function getVisibleItems() {
+            return Array.from(document.querySelectorAll('.project-item'))
+                        .filter(item => getComputedStyle(item).display !== 'none');
+        }
+
+        function updateSlider() {
+            const gallery = document.getElementById('projectGallery');
+            if (!gallery) return;
+
+            const visible = getVisibleItems();
+            if (visible.length === 0) {
+                gallery.style.transform = 'translateX(0)';
+                return;
+            }
+
+            const cardWidth = visible[0].offsetWidth + 25;
+            const visibleCount = window.innerWidth > 1100 ? 3 : window.innerWidth > 750 ? 2 : 1;
+            const maxIndex = Math.max(0, visible.length - visibleCount);
+
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+            gallery.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        }
+
+        function nextSlide() {
+            const visible = getVisibleItems();
+            const visibleCount = window.innerWidth > 1100 ? 3 : window.innerWidth > 750 ? 2 : 1;
+            const maxIndex = Math.max(0, visible.length - visibleCount);
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                updateSlider();
+            }
+        }
+
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlider();
+            }
+        }
+
+        window.addEventListener('resize', updateSlider);
+        document.addEventListener('DOMContentLoaded', () => {
+            updateSlider();
+            // Default active button
+            document.querySelector('.filter-btn[onclick="filterProjects(\'all\')"]').classList.add('active');
+        });
+
+        // Navbar & Footer
+        fetch("navbar.html").then(res => res.text()).then(data => {
+            document.getElementById("navbar").innerHTML = data;
+            const currentPath = window.location.pathname;
+            let currentFile = currentPath.split("/").pop() || "index.html";
+            currentFile = currentFile.toLowerCase();
+            const links = document.querySelectorAll("#main-nav a");
+            links.forEach(link => {
+                link.classList.remove("active");
+                let href = link.getAttribute("href").toLowerCase();
+                if (href === currentFile || href.endsWith("/" + currentFile)) {
+                    link.classList.add("active");
+                }
+            });
+        });
+
+        fetch("footer.html").then(res => res.text()).then(data => {
+            document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+</body>
+</html>

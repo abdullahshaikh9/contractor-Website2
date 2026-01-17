@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Test Active Link</title>
+    <style>
+        header {
+            background: #0b2c4d;
+            color: white;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            z-index: 1000;
+        }
+        header img { width: 90px; }
+        header ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        header a:hover { color: orange; }
+        header a.active {
+            color: orange;
+            border-bottom: 2px solid orange;
+            padding-bottom: 5px;
+        }
+        @media (max-width: 768px) {
+            header { padding: 20px 20px; }
+            header ul { gap: 15px; }
+        }
+    </style>
+</head>
+<body style="margin-top: 100px; padding: 20px;">
+    <header>
+        <img src="images/logo.png" alt="Logo">
+        <ul id="main-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </header>
+</body>
+</html>

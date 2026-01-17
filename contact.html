@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Contractor Company</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+    <div class="hero-contact">
+        <div class="hero-box">
+            <h1>Get In Touch</h1>
+            <p>Ready to start your next project? We're just one message away.</p>
+        </div>
+    </div>
+
+    <!-- Contact Details + Map -->
+    <section id="details">
+        <div class="section-title"><h2>Contact Information</h2></div>
+        <div class="contact-info">
+            <ul class="contact-details">
+                <li><i class="fas fa-phone-volume"></i> 0300-9379373 (24/7 Support)</li>
+                <li><i class="fas fa-envelope"></i> engrabduljabbar44@gmail.com</li>
+                <li><i class="fas fa-map-marker-alt"></i> Flat No 8, Evergreen Residency, Qasimabad, Hyderabad, Pakistan</li>
+                <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM | Sat: 10AM-4PM | Sun: Closed</li>
+            </ul>
+            <a href="https://wa.me/923009379373" target="_blank" class="hero-btn">Chat on WhatsApp</a>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.0000000000005!2d68.36666699999999!3d25.366666999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb19c8b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sQasimabad%2C%20Hyderabad%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1720000000000!5m2!1sen!2s" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- Quote Form -->
+    <section id="form">
+        <div class="section-title"><h2>Request a Free Quote</h2></div>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Full Name" required>
+            <input type="email" placeholder="Your Email Address" required>
+            <input type="tel" placeholder="Phone Number (with WhatsApp)" required>
+            <select required>
+                <option value="">Select Project Type</option>
+                <option>Residential</option>
+                <option>Commercial</option>
+                <option>Industrial</option>
+                <option>Renovation</option>
+                <option>Other</option>
+            </select>
+            <textarea placeholder="Briefly describe your project (location, size, requirements...)" rows="6" required></textarea>
+            <button type="submit" class="hero-btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Social Media -->
+    <section id="social">
+        <div id="section-title"><h2>Connect With Us</h2></div>
+        <div class="social-icons">
+            <a href="https://wa.me/923009379373" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/abdullah._.shaikh9/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </section>
+
+    <!-- Office Hours -->
+    <section id="hours">
+        <div class="section-title"><h2>Office Hours</h2></div>
+        <div class="hours-grid">
+            <div class="hour-item">
+                <h3>Monday - Friday</h3>
+                <p>9:00 AM - 6:00 PM</p>
+            </div>
+            <div class="hour-item">
+                <h3>Saturday</h3>
+                <p>10:00 AM - 4:00 PM</p>
+            </div>
+            <div class="hour-item">
+                <h3>Sunday</h3>
+                <p>Closed</p>
+            </div>
+            <div class="hour-item highlight">
+                <h3>Emergency / 24×7</h3>
+                <p>Available on WhatsApp & Call</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+        // FAQ Toggle (if you add FAQ later)
+        // document.querySelectorAll('.faq-toggle').forEach(button => {
+        //     button.addEventListener('click', () => {
+        //         const answer = button.nextElementSibling;
+        //         answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        //     });
+        // });
+
+        // Navbar & Footer
+        fetch("navbar.html").then(res => res.text()).then(data => {
+            document.getElementById("navbar").innerHTML = data;
+            const currentPath = window.location.pathname;
+            let currentFile = currentPath.split("/").pop() || "index.html";
+            currentFile = currentFile.toLowerCase();
+            const links = document.querySelectorAll("#main-nav a");
+            links.forEach(link => {
+                link.classList.remove("active");
+                let href = link.getAttribute("href").toLowerCase();
+                if (href === currentFile || href.endsWith("/" + currentFile)) {
+                    link.classList.add("active");
+                }
+            });
+        });
+
+        fetch("footer.html").then(res => res.text()).then(data => {
+            document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+</body>
+</html>

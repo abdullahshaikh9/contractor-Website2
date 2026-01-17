@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Contractor Company</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .team-slider { 
+            position: relative; 
+            overflow: hidden; 
+            margin: 2rem 0;
+            padding: 0 20px;
+        }
+
+        .team-gallery { 
+            display: flex; 
+            gap: 20px;
+            transition: transform 0.5s ease; 
+        }
+
+        .team-member { 
+            flex: 0 0 100%;
+            min-width: 100%;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        @media (min-width: 576px) {
+            .team-member {
+                flex: 0 0 calc(50% - 10px);
+                min-width: calc(50% - 10px);
+            }
+            .team-slider { padding: 0 40px; }
+        }
+
+        @media (min-width: 992px) {
+            .team-member {
+                flex: 0 0 calc(33.333% - 15px);
+                min-width: calc(33.333% - 15px);
+            }
+            .team-slider { padding: 0 60px; }
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .team-member h4 {
+            margin: 15px 0 8px;
+            color: #0b2c4d;
+        }
+
+        .team-member p {
+            padding: 0 15px 20px;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(11, 44, 77, 0.7);
+            color: white;
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            font-size: 1.6rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .slider-arrow:hover {
+            background: orange;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        .faq-answer { display: none; padding-top: 10px; }
+        .faq-toggle { 
+            background: none; 
+            border: none; 
+            width: 100%; 
+            text-align: left; 
+            font-size: 1.1rem; 
+            cursor: pointer; 
+            padding: 15px 0;
+            font-weight: 600;
+            color: #0b2c4d;
+        }
+
+        .show-more { color: orange; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <div class="hero-about">
+        <div class="hero-box">
+            <h1>About Contractor Company</h1>
+            <p>Learn our story, values, and expert team.</p>
+        </div>
+    </div>
+
+    <section id="story">
+        <div class="section-title"><h2>Our Story</h2></div>
+        <div class="about">
+            <img src="images/comany.png" alt="Company">
+            <div class="about-text">
+                <h3>Founded in 2010</h3>
+                <p>We began our journey in Hyderabad, Sindh, with small residential and commercial projects. What started with 8-10 people has now grown into a strong team of 550+ professionals across Hyderabad, Karachi, Lahore, Islamabad, and Faisalabad.</p>
+                <p>Over 15+ years, we have completed 220+ projects covering more than 8 million square feet — including residential societies, offices, factories, hospitals, schools, government buildings, and solar-integrated smart structures.</p>
+                <p>Our promise remains the same: top quality, strict safety, on-time delivery, and real value for every client.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team">
+        <div class="section-title"><h2>Meet Our Experts</h2></div>
+        
+        <div class="team-slider">
+            <button class="slider-arrow prev" onclick="prevTeamSlide()">❮</button>
+            
+            <div class="team-gallery">
+                <div class="team-member">
+                    <img src="images/abdullah.jpg" alt="Abdullah">
+                    <h4>Engr. Abdullah</h4>
+                    <p>Software Engineer, 10+ years. Led 50+ projects.</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/a.jabbar.jpeg" alt="A.Jabbar">
+                    <h4>Engr. A.Jabbar</h4>
+                    <p>Civil Engineer, MSc. Expert in structural integrity.</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/ali.webp" alt="Ali">
+                    <h4>Engr. Ali</h4>
+                    <p>Electrical Specialist, 8 years. Smart grid expert.</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/a.rehman.jpg" alt="A.Rehman">
+                    <h4>Engr. A.Rehman</h4>
+                    <p>Project Manager, 10 years experience.</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/hammad.jpg" alt="Hammad">
+                    <h4>Engr. Hammad</h4>
+                    <p>Software Engineer, 8 years. Front-end specialist.</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/shahnshah.jpg" alt="Shahanshah">
+                    <h4>Engr. Shahanshah</h4>
+                    <p>Software Engineer, 8 years. UI/UX Designing.</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/seth abid.jpg" alt="Seth Abid">
+                    <h4>Engr. Seth Abid</h4>
+                    <p>IT Specialist, 8 years. PHP Developer.</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/hasnanin.jpg" alt="Hasnain">
+                    <h4>Engr. Hasnain</h4>
+                    <p>Software Engineer, 12 years. Full Stack.</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/susheel.jpg" alt="Susheel">
+                    <h4>Engr. Susheel</h4>
+                    <p>HR Manager, 8 years experience.</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/gulzar ahmend.jpeg" alt="Gulzar Ahmed">
+                    <h4>Engr. Gulzar Ahmed</h4>
+                    <p>Civil Engineer, 8 years. Structural expert.</p>
+                </div>
+            </div>
+
+            <button class="slider-arrow next" onclick="nextTeamSlide()">❯</button>
+        </div>
+    </section>
+
+    <section id="feedback">
+        <div class="section-title"><h2>Client Feedback</h2></div>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <p>"Their values shine through in every project. Highly recommended!"</p>
+                <h4>- Business Owner ★★★★★</h4>
+            </div>
+            <div class="testimonial">
+                <p>"From consultation to handover, flawless execution."</p>
+                <h4>- Residential Client ★★★★☆</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Professional team with innovative solutions."</p>
+                <h4>- Commercial Client ★★★★★</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Safety and quality are top priorities here."</p>
+                <h4>- Industrial Owner ★★★★☆</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Exceeded expectations on budget and time."</p>
+                <h4>- Project Manager ★★★★★</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Reliable partners for all construction needs."</p>
+                <h4>- CEO ★★★★☆</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="section-title"><h2>FAQs</h2></div>
+        <div class="faq-item">
+            <button class="faq-toggle">Do you handle international projects? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">Yes, we have experience in UAE and Saudi Arabia.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-toggle">What warranties do you offer? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">2-year warranty on all work.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-toggle">How do you ensure safety? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">We follow OHSAS standards with zero accidents in 5 years.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-toggle">What is your project timeline? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">Timelines vary; we provide detailed schedules post-consultation.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-toggle">How much do services cost? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">Costs start from PKR 50,000; contact for quotes.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-toggle">Do you provide electrical work along with civil construction? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">Yes, our team handles both professionally.</div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <div class="section-title"><h2>Certifications</h2></div>
+        <div class="choose-grid">
+            <div class="choose-box">✔ ISO 9001 Certified</div>
+            <div class="choose-box">✔ OHSAS 18001 for Safety</div>
+            <div class="choose-box">✔ NEC Compliant</div>
+        </div>
+    </section>
+
+    <!-- AWARDS & RECOGNITIONS -->
+    <section id="awards" class="awards-section">
+        <div class="section-title">
+            <h2>Awards & Recognitions</h2>
+            <p class="section-subtitle">Celebrating Excellence, Innovation & Commitment</p>
+        </div>
+        <div class="awards-grid">
+            <div class="award-card">
+                <div class="award-icon">🏆</div>
+                <h3>Best Contractor Award 2023</h3>
+                <p>National Construction Excellence Award</p>
+                <span class="award-year">2023</span>
+            </div>
+            <!-- baaki award cards same rakh sakte ho -->
+        </div>
+    </section>
+
+    <!-- CTA - Join Our Team -->
+    <section id="cta" class="cta-section">
+        <div class="section-title">
+            <h2>Join Our Growing Team</h2>
+            <p class="section-subtitle">Be Part of Pakistan's Leading Construction Firm</p>
+        </div>
+        <div class="cta-content">
+            <div class="cta-text">
+                <h3>Why Work With Us?</h3>
+                <ul class="cta-benefits">
+                    <li>Competitive salary & bonuses</li>
+                    <li>Professional training programs</li>
+                    <li>Health insurance & family benefits</li>
+                    <li>Modern work environment</li>
+                    <li>Opportunity on landmark projects</li>
+                </ul>
+                <a href="contact.html" class="hero-btn cta-btn">Apply Now →</a>
+                <p class="cta-note">Send CV to: careers@yourcompany.com</p>
+            </div>
+            <div class="cta-image">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team Working" class="cta-img">
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletter">
+        <div class="section-title"><h2>Subscribe for Updates</h2></div>
+        <form class="subscribe-form">
+            <input type="email" placeholder="Enter your email">
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+        let teamSlideIndex = 0;
+        const teamGallery = document.querySelector('.team-gallery');
+
+        function updateTeamSlider() {
+            if (!teamGallery) return;
+            const items = teamGallery.children.length;
+            const itemWidth = teamGallery.children[0].offsetWidth + 20;
+            const visible = window.innerWidth > 992 ? 3 : window.innerWidth > 576 ? 2 : 1;
+            const max = items - visible;
+
+            teamSlideIndex = Math.max(0, Math.min(teamSlideIndex, max));
+            teamGallery.style.transform = `translateX(-${teamSlideIndex * itemWidth}px)`;
+        }
+
+        function nextTeamSlide() {
+            teamSlideIndex++;
+            updateTeamSlider();
+        }
+
+        function prevTeamSlide() {
+            teamSlideIndex--;
+            updateTeamSlider();
+        }
+
+        document.querySelectorAll('.faq-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const answer = btn.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        window.addEventListener('resize', updateTeamSlider);
+        document.addEventListener('DOMContentLoaded', () => {
+            updateTeamSlider();
+            fetch("navbar.html").then(res => res.text()).then(data => {
+                document.getElementById("navbar").innerHTML = data;
+                // active link logic...
+            });
+            fetch("footer.html").then(res => res.text()).then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+        });
+    </script>
+</body>
+</html>
